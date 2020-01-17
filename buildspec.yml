@@ -9,7 +9,7 @@ phases:
       - echo pre_build
   build:
     commands:
-      - mvn package
+      - mvn clean prepare-package war:exploded
       - echo build
   post_build:
     commands:
@@ -17,4 +17,4 @@ phases:
 
 artifacts:
   files:
-    - target/application.jar
+    - deploy/**/*
